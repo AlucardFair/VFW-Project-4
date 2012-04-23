@@ -1,0 +1,129 @@
+/*
+Zachery Hernandez
+VFW 1203
+Project 3
+4/19/2012
+Body Health & Fitness
+https://github.com/AlucardFair/VFW-Project-3
+*/
+html {
+	font-family: helvetica, roboto, droid-sans;
+	background-color: rgb(200,200,200);
+	margin: 0 auto;
+}
+
+body {
+	font-family: helvetica, roboto, droid-sans;
+	background-color: rgb(200,200,200);
+	background-image: url();
+	width: 95%;
+	margin: 0 auto;
+	margin-bottom: 8px;
+	padding: .5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 0 10px #000;
+}
+
+nav {
+	text-align: center;
+}
+
+input[type="button"] {
+	font-family: helvetica, roboto, droid-sans;
+	background-color: black;
+	color: white;
+}
+
+h1 {
+	font-family: Helvetica, Roboto, Droid-Sans;
+	font-variant: small-caps;
+	font-weight: strong;
+	font-size: 170%;
+	text-align: center;
+	color: white;
+	background-color: rgba(0,0,0,.3);
+	margin: 2px;
+	margin-top: 8px;
+	padding: 2px;
+	border: 1px;
+	border-color: black;
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0 0 5px white;
+}
+
+h2 {
+	font-family: helvetica, roboto, droid-sans;
+	font-size: 55%;
+	font-weight: strong;
+	color: white;
+}
+
+p {
+	font-family: helvetica, roboto, droid-sans;
+	color: rgb(60,60,60);
+	text-indent: 10px;
+	text-align: right;
+	font-size: 80%;
+	text-transform: lowercase;
+	margin-right: 12px;
+	margin-top: -10px;
+}
+
+fieldset {
+	font-family: helvetica, roboto, droid-sans;
+	font-size: 150%;
+	font-weight: strong;
+	color: white;
+	background-color: rgba(0,0,0,.3);
+	margin: 4px;
+	padding: 1px;
+	border-color: black;
+	border: 1px;
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0 0 5px white;
+}
+
+legend {
+	font-family: Helvetica, Roboto, Droid-Sans;
+	font-weight: strong;
+}
+
+span {
+	color: red;
+}
+
+span.required {
+	color: white;
+	text-shadow: 0 0 5px red;
+}
+
+#errors li {
+	color: white;
+	text-shadow: 0 0 5px red;
+}
+
+li {
+	font-family: helvetica, roboto, droid-sans;
+	font-size: 45%;
+	font-weight: normal;
+	color: white;
+	list-style-type: none;
+	list-style-position: inside;
+}
+
+div.button {
+	text-align: center;
+}
+
+input[type="submit"] {
+	font-family: helvetica, roboto, droid-sans;
+	background-color: black;
+	color: white;
+}
+
+footer {
+	font-family: Helvetica, Roboto, Droid-Sans;
+	font-variant: small-caps;
+	text-align: center;
+	color: rgb(88,88,88);
+}
