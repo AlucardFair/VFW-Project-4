@@ -106,11 +106,12 @@ window.addEventListener("DOMContentLoaded", function() {
 		makeDiv.setAttribute("id", "items");
 		var makeList = document.createElement('ul');
 		makeDiv.appendChild(makeList);
-		document.body.appendChild(makeDiv);
+		document.body.insertBefore(makeDiv, $('foot'));
 		// Set 'items' display //
 		$('items').style.display = "block";
 		for(var i=0, j=localStorage.length; i<j; i++) {
 			var makeLi = document.createElement('li');
+			makeLi.style.fontSize = "25px";
 			var buttonsLi = document.createElement('li');
 			makeList.appendChild(makeLi);
 			var key = localStorage.key(i);
@@ -135,20 +136,8 @@ window.addEventListener("DOMContentLoaded", function() {
 	function makeButtonsLi(key, buttonsLi) {
 		// Add edit single item button //
 		var editButton = document.createElement('a');
-		editButton.href = "#";
-		// Added Style to Anchor //
-		editButton.style.fontSize = "10px";
-		editButton.style.textDecoration = "none";
-		editButton.style.color = "white";
-		editButton.style.backgroundColor = "black";
-		editButton.style.paddingLeft = "7px";
-		editButton.style.paddingRight = "7px";
-		editButton.style.marginRight = "10px";
-		editButton.style.borderStyle = "solid";
-		editButton.style.borderWidth = "1px";
-		editButton.style.borderRadius = "10px";
-		editButton.style.borderColor = "black";
-		editButton.style.webkitBoxShadow = "inset 0px 6px 1px rgba(220,220,220,.3)";		
+		editButton.setAttribute("id", "editButton");
+		editButton.href = "#";	
 		editButton.key = key;
 		var editTxt = "Edit Workout";
 		editButton.addEventListener("click", editItem);
@@ -159,19 +148,8 @@ window.addEventListener("DOMContentLoaded", function() {
 		buttonsLi.appendChild(breakTag);*/
 		// Add single delete item button //
 		var deleteButton = document.createElement('a');
+		deleteButton.setAttribute("id", "deleteButton");
 		deleteButton.href = "#";
-		// Added Style to Anchor //
-		deleteButton.style.fontSize = "10px";
-		deleteButton.style.textDecoration = "none";
-		deleteButton.style.color = "white";
-		deleteButton.style.backgroundColor = "black";
-		deleteButton.style.paddingLeft = "7px";
-		deleteButton.style.paddingRight = "7px";
-		deleteButton.style.borderStyle = "solid";
-		deleteButton.style.borderWidth = "1px";
-		deleteButton.style.borderRadius = "10px";
-		deleteButton.style.borderColor = "black";
-		deleteButton.style.webkitBoxShadow = "inset 0px 6px 1px rgba(220,220,220,.3)";
 		deleteButton.key = key;
 		var deleteTxt = "Delete Workout";
 		deleteButton.addEventListener("click", deleteItem);
