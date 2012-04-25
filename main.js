@@ -102,6 +102,10 @@ window.addEventListener("DOMContentLoaded", function() {
 	function getData() {
 		// Call Function //
 		toggle("on");
+		if(localStorage.length === 0) {
+			alert("There is no data in Local Storage. \n Default Data was added.");
+			autoFillData();
+		}
 		var makeDiv = document.createElement('div');
 		makeDiv.setAttribute("id", "items");
 		var makeList = document.createElement('ul');
@@ -120,6 +124,7 @@ window.addEventListener("DOMContentLoaded", function() {
 			var obj = JSON.parse(value);
 			var makeSubList = document.createElement('ul');
 			makeLi.appendChild(makeSubList);
+			getImage(obj.training[1], makeSubList);
 			for (var x in obj) {
 				var makeSubLi = document.createElement('li');
 				makeSubList.appendChild(makeSubLi);
@@ -128,6 +133,26 @@ window.addEventListener("DOMContentLoaded", function() {
 				makeSubList.appendChild(buttonsLi);
 			}
 			makeButtonsLi(localStorage.key(i), buttonsLi);
+		}
+	};
+	
+	// Get an image for the right category //
+	function getImage(imgName, makeSubList) {
+		var imageLi = document.createElement('li');
+		makeSubList.appendChild(imageLi);
+		var newImage = document.createElement('img');
+		var setSrc = newImage.setAttribute("src", "images/" + imgName + ".png");
+		newImage.style.paddingTop = "10px";
+		imageLi.appendChild(newImage);
+	};
+	
+	// Auto populate local storage //
+	function autoFillData() {
+		// Retrieve JSON OBJECT from json.js //
+		// Store the JSON OBJECT to local storage //
+		for(var n in json) {
+		var id = Math.floor(Math.random()*10001);
+		localStorage.setItem(id, JSON.stringify(json[n]));
 		}
 	};
 	
@@ -281,7 +306,7 @@ window.addEventListener("DOMContentLoaded", function() {
 	};
 	
 	// Variable defaults //
-	var workoutTypes = ["*Choose A Style*", "Cardio", "Strength", "Tone "],
+	var workoutTypes = ["*Choose A Style*", "Cardio", "Strength", "Tone"],
 		favoriteValue = "No",
 		timeValue,
 		confirmClear,
